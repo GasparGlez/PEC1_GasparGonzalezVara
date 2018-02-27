@@ -15,6 +15,9 @@ class LoginViewController: UIViewController {
     // BEGIN-UOC-2
     @IBAction func loginTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "SegueToAuthentication", sender: self)
+        var miVariable = "Hola"
+        print(miVariable)
+        
     }
     // END-UOC-2
     
