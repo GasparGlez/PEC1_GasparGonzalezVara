@@ -315,6 +315,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="firstField:" destination="qWi-qB-46D" eventType="editingChanged" id="qBo-lc-pXA"/>
+                                    <outlet property="delegate" destination="qWi-qB-46D" id="UaR-qq-o3o"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kT-Bg-b3C">
                                 <rect key="frame" x="152.5" y="172" width="30" height="30"/>
@@ -324,6 +328,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="secondField:" destination="qWi-qB-46D" eventType="editingChanged" id="C9J-yM-yXS"/>
+                                    <outlet property="delegate" destination="qWi-qB-46D" id="zYt-5h-A1M"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eqh-Oh-sDc">
                                 <rect key="frame" x="192.5" y="172" width="30" height="30"/>
@@ -333,6 +341,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="thirdField:" destination="qWi-qB-46D" eventType="editingChanged" id="jZO-eV-wfi"/>
+                                    <outlet property="delegate" destination="qWi-qB-46D" id="667-By-EXu"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5J-xy-r6k">
                                 <rect key="frame" x="232.5" y="172" width="30" height="30"/>
@@ -342,6 +354,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="fourthField:" destination="qWi-qB-46D" eventType="editingChanged" id="pdJ-V7-RCX"/>
+                                    <outlet property="delegate" destination="qWi-qB-46D" id="vgs-mQ-klx"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, enter the authentication code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EN2-sH-t3v">
                                 <rect key="frame" x="45" y="70" width="285" height="21"/>
