@@ -66,12 +66,23 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         if (Int(fourthField.text!) != nil) {
             // Set value for this position
             concatValidationFields[3] = Int(fourthField.text!)!
-            Utils.show(Message: alertMessageText, WithTitle: alertMessageTitle,InViewController: self)
-
         }
             // No number entered. Ask for a number to user
         else {
             Utils.show(Message: alertMessageText, WithTitle: alertMessageTitle,InViewController: self)
+        }
+    }
+
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        var correctCode = true
+        for item in concatValidationFields {
+            if (item>9) {
+                correctCode = false
+                Utils.show(Message: "Sorry, the entered code is not valid " + "(position " + "\(concatValidationFields.index(of: item)!+1)" + ")", WithTitle: alertMessageTitle,InViewController: self)
+            }
+        }
+        if correctCode {
+            performSegue(withIdentifier: "SegueToMainNavigation", sender: self)
         }
     }
     
