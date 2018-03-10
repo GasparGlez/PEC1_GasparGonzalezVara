@@ -32,6 +32,8 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
         // No number entered. Ask for a number to user
         else {
+            // Set a invalid value for this position
+            concatValidationFields[0] = 10
             Utils.show(Message: alertMessageText, WithTitle: alertMessageTitle,InViewController: self)
         }
     }
@@ -45,6 +47,8 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
             // No number entered. Ask for a number to user
         else {
+            // Set a invalid value for this position
+            concatValidationFields[1] = 10
             Utils.show(Message: alertMessageText, WithTitle: alertMessageTitle,InViewController: self)
         }
     }
@@ -58,6 +62,8 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
             // No number entered. Ask for a number to user
         else {
+            // Set a invalid value for this position
+            concatValidationFields[2] = 10
             Utils.show(Message: alertMessageText, WithTitle: alertMessageTitle,InViewController: self)
         }
     }
@@ -69,20 +75,40 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
             // No number entered. Ask for a number to user
         else {
+            // Set a invalid value for this position 
+            concatValidationFields[3] = 10
             Utils.show(Message: alertMessageText, WithTitle: alertMessageTitle,InViewController: self)
         }
     }
 
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        var correctCode = true
-        for item in concatValidationFields {
-            if (item>9) {
-                correctCode = false
-                Utils.show(Message: "Sorry, the entered code is not valid " + "(position " + "\(concatValidationFields.index(of: item)!+1)" + ")", WithTitle: alertMessageTitle,InViewController: self)
+        // String with contatenation of incorrect/not numeric positions
+        var incorrectPositions = ""
+        var strConcatValidationFields = ""
+        
+        // Check every position entered (array elements)
+        for item in 0...3 {
+            if (concatValidationFields[item]>9) {
+                incorrectPositions += " " + "\(item + 1)"
+            }
+            // String with the code (concatenation of four numeric positions)
+            strConcatValidationFields += String(concatValidationFields[item])
+        }
+        
+        // Only if incorrectPositions == "" continue to next step
+        if incorrectPositions == "" {
+            // Validation of entered code
+            // If code is correct, go to Main
+            if Services.validate(code: strConcatValidationFields) {
+                performSegue(withIdentifier: "SegueToMainNavigation", sender: self)
+            }
+            else{
+                Utils.show(Message: "Sorry, the entered code is not valid", WithTitle: alertMessageTitle,InViewController: self)
             }
         }
-        if correctCode {
-            performSegue(withIdentifier: "SegueToMainNavigation", sender: self)
+        // Else show incorrect positions to user
+        else {
+            Utils.show(Message: "Sorry, the entered code is not valid. " + "Please check positions:" + incorrectPositions, WithTitle: alertMessageTitle,InViewController: self)
         }
     }
     

@@ -29,6 +29,15 @@ class LoginViewController: UIViewController {
     // END-UOC-2
     
     // BEGIN-UOC-5
+    // This method is called everytime the view is about to be shown on screen. Overriding this method we can perform custom tasks
+    // associated with displaying the view because the code inside will run before the user is shown the view.
+    override func viewWillAppear(_ animated: Bool) {
+        // Calling the super class function, as we are overriding it, we want to ensure any code is called from the parent class
+        super.viewWillAppear(animated)
+        // Set .text property to "" to initialize these UITextFields
+        usernameField.text=""
+        passwordField.text=""
+    }
 
     // END-UOC-5
     
