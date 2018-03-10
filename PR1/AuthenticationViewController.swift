@@ -15,9 +15,9 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var thirdField: UITextField!
     @IBOutlet weak var fourthField: UITextField!
     
-    // Text for messages
+    // Text & title for messages
     let alertMessageText = "Please input a number (0..9)"
-    let alertMessageTitle = "GGV_PEC1"
+    let alertMessageTitle = "Validation error"
     
     // Array with for number positions
     var concatValidationFields: [Int] = [10,10,10,10]
@@ -72,6 +72,7 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         if (Int(fourthField.text!) != nil) {
             // Set value for this position
             concatValidationFields[3] = Int(fourthField.text!)!
+            firstField.becomeFirstResponder()
         }
             // No number entered. Ask for a number to user
         else {
@@ -102,8 +103,13 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
             if Services.validate(code: strConcatValidationFields) {
                 performSegue(withIdentifier: "SegueToMainNavigation", sender: self)
             }
+                // Else: Entered code is not valid. Show a validation error message and clear fields
             else{
                 Utils.show(Message: "Sorry, the entered code is not valid", WithTitle: alertMessageTitle,InViewController: self)
+                firstField.text = ""
+                secondField.text = ""
+                thirdField.text = ""
+                fourthField.text = ""
             }
         }
         // Else show incorrect positions to user

@@ -29,8 +29,8 @@ class LoginViewController: UIViewController {
     // END-UOC-2
     
     // BEGIN-UOC-5
-    // This method is called everytime the view is about to be shown on screen. Overriding this method we can perform custom tasks
-    // associated with displaying the view because the code inside will run before the user is shown the view.
+    // viewWillAppear method is called everytime the view is about to be shown on screen. Overriding this method we can perform
+    // custom tasks associated with displaying the view because the code inside will run before the user is shown the view.
     override func viewWillAppear(_ animated: Bool) {
         // Calling the super class function, as we are overriding it, we want to ensure any code is called from the parent class
         super.viewWillAppear(animated)
@@ -38,11 +38,38 @@ class LoginViewController: UIViewController {
         usernameField.text=""
         passwordField.text=""
     }
-
     // END-UOC-5
     
     // BEGIN-UOC-6
+    // viewDidLoad() is the first method to be called when view controller loads. It’s a good place to do any initialization
+    // such as setting constraints. In this case, to get hour and show a hour-custom user welcome message.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Get system hour
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
 
+        // Text & background color for every hour interval
+        switch (hour) {
+        case (6...11):
+            welcomeLabel.text = "Good morning"
+            self.view.backgroundColor = UIColor.orange.lighter()
+        case (12...17):
+            welcomeLabel.text = "Good afternoon"
+            self.view.backgroundColor = UIColor.yellow.lighter()
+        case (18...21):
+            welcomeLabel.text = "Good evening"
+            self.view.backgroundColor = UIColor.red.lighter()
+        // Between 22 and 5
+        default:
+            welcomeLabel.text = "Good night"
+            self.view.backgroundColor = UIColor.blue.lighter()
+        }
+        
+    }
+    
+    
     // END-UOC-6
     
     @IBAction func unwindToLogin(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
