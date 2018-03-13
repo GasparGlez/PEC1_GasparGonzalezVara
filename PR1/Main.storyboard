@@ -24,52 +24,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Initial amount: X €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLf-1A-Vx2">
-                                <rect key="frame" x="16" y="96" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Initial amount: X €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLf-1A-Vx2">
+                                <rect key="frame" x="16" y="94" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="100" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-Ie-S7a">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="100" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-Ie-S7a">
                                 <rect key="frame" x="14" y="125" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Interest rate: X.XX %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnD-4L-vmG">
-                                <rect key="frame" x="16" y="163" width="158" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Interest rate: X.XX %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnD-4L-vmG">
+                                <rect key="frame" x="16" y="185" width="158" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="aXe-YX-QBM">
-                                <rect key="frame" x="16" y="192" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="aXe-YX-QBM">
+                                <rect key="frame" x="16" y="216" width="94" height="29"/>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Years: X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8s-K7-GF1">
-                                <rect key="frame" x="16" y="229" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Years: X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8s-K7-GF1">
+                                <rect key="frame" x="16" y="275" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-9v-E8K">
-                                <rect key="frame" x="16" y="258" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final amount: X.XX €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNU-mP-Gzd">
-                                <rect key="frame" x="16" y="313" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final amount: X.XX €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNU-mP-Gzd">
+                                <rect key="frame" x="16" y="365" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-9v-E8K">
+                                <rect key="frame" x="16" y="306" width="94" height="29"/>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n8s-K7-GF1" firstAttribute="leading" secondItem="XdV-7P-mK6" secondAttribute="leadingMargin" id="9Bq-ac-EK9"/>
+                            <constraint firstItem="MnD-4L-vmG" firstAttribute="top" secondItem="tlh-Ie-S7a" secondAttribute="bottom" constant="30" id="9ji-cw-Vpj"/>
+                            <constraint firstItem="bNU-mP-Gzd" firstAttribute="trailing" secondItem="XdV-7P-mK6" secondAttribute="trailingMargin" id="SIK-2w-5oz"/>
+                            <constraint firstItem="tlh-Ie-S7a" firstAttribute="leading" secondItem="XdV-7P-mK6" secondAttribute="leadingMargin" id="UCs-Us-Vzj"/>
+                            <constraint firstItem="bNU-mP-Gzd" firstAttribute="top" secondItem="eiM-9v-E8K" secondAttribute="bottom" constant="30" id="Ucs-KN-l6x"/>
+                            <constraint firstItem="bNU-mP-Gzd" firstAttribute="leading" secondItem="XdV-7P-mK6" secondAttribute="leadingMargin" id="bAp-Cl-XA2"/>
+                            <constraint firstItem="aXe-YX-QBM" firstAttribute="top" secondItem="MnD-4L-vmG" secondAttribute="bottom" constant="10" id="dar-Qc-Lzq"/>
+                            <constraint firstItem="aXe-YX-QBM" firstAttribute="leading" secondItem="XdV-7P-mK6" secondAttribute="leadingMargin" id="gOc-cT-QGI"/>
+                            <constraint firstItem="eiM-9v-E8K" firstAttribute="leading" secondItem="XdV-7P-mK6" secondAttribute="leadingMargin" id="kk5-aU-AXj"/>
+                            <constraint firstItem="bLf-1A-Vx2" firstAttribute="top" secondItem="Lki-gZ-VhK" secondAttribute="bottom" constant="30" id="kl6-cF-wwd"/>
+                            <constraint firstItem="bLf-1A-Vx2" firstAttribute="leading" secondItem="XdV-7P-mK6" secondAttribute="leadingMargin" id="lt5-ZE-8HE"/>
+                            <constraint firstItem="tlh-Ie-S7a" firstAttribute="trailing" secondItem="XdV-7P-mK6" secondAttribute="trailingMargin" id="mm8-y7-jXP"/>
+                            <constraint firstItem="eiM-9v-E8K" firstAttribute="top" secondItem="n8s-K7-GF1" secondAttribute="bottom" constant="10" id="oed-rA-wVA"/>
+                            <constraint firstItem="tlh-Ie-S7a" firstAttribute="top" secondItem="bLf-1A-Vx2" secondAttribute="bottom" constant="10" id="vIm-RL-PCu"/>
+                            <constraint firstItem="n8s-K7-GF1" firstAttribute="top" secondItem="aXe-YX-QBM" secondAttribute="bottom" constant="30" id="wOj-VE-Rt2"/>
+                            <constraint firstItem="MnD-4L-vmG" firstAttribute="leading" secondItem="XdV-7P-mK6" secondAttribute="leadingMargin" id="yxl-j8-qw1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Calculator" id="Ids-qj-Aak"/>
                     <connections>
-                        <outlet property="yearsLabel" destination="n8s-K7-GF1" id="FVa-xN-P4G"/>
+                        <outlet property="initialAmountLabel" destination="bLf-1A-Vx2" id="9zJ-nD-2VK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6C-yn-rCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,7 +389,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="nextButtonTapped:" destination="qWi-qB-46D" eventType="touchUpInside" id="5XK-GU-uKo"/>
+                                    <action selector="nextButtonTapped:" destination="qWi-qB-46D" eventType="touchUpInside" id="mJO-96-2he"/>
+                                    <segue destination="lnl-au-HBQ" kind="show" identifier="SegueToMainNavigation" id="NEJ-bq-WWl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -413,12 +425,11 @@
                         <outlet property="fourthField" destination="P5J-xy-r6k" id="5iY-Zn-3Jm"/>
                         <outlet property="secondField" destination="1kT-Bg-b3C" id="imm-6O-2cD"/>
                         <outlet property="thirdField" destination="Eqh-Oh-sDc" id="Vxz-VC-dcr"/>
-                        <segue destination="lnl-au-HBQ" kind="show" identifier="SegueToMainNavigation" id="wWO-IB-d6h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u06-1N-68X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1444" y="-1154.9261083743843"/>
+            <point key="canvasLocation" x="-1444" y="-1155.472263868066"/>
         </scene>
     </scenes>
     <resources>

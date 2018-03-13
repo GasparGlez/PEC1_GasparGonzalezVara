@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
     
     // BEGIN-UOC-5
     // viewWillAppear method is called everytime the view is about to be shown on screen. Overriding this method we can perform
-    // custom tasks associated with displaying the view because the code inside will run before the user is shown the view.
+    // custom tasks associated with displaying the view, because the code inside will run before the user/password are shown.
     override func viewWillAppear(_ animated: Bool) {
         // Calling the super class function, as we are overriding it, we want to ensure any code is called from the parent class
         super.viewWillAppear(animated)
@@ -41,8 +41,8 @@ class LoginViewController: UIViewController {
     // END-UOC-5
     
     // BEGIN-UOC-6
-    // viewDidLoad() is the first method to be called when view controller loads. It’s a good place to do any initialization
-    // such as setting constraints. In this case, to get hour and show a hour-custom user welcome message.
+    // viewDidLoad() is the first method to be called when view controller loads. It’s a good place to do any initialization.
+    // In this case, to get hour and show a hour-custom user welcome message.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Get system hour

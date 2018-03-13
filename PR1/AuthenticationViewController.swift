@@ -10,6 +10,7 @@ import UIKit
 class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     // BEGIN-UOC-4
 
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var firstField: UITextField!
     @IBOutlet weak var secondField: UITextField!
     @IBOutlet weak var thirdField: UITextField!
@@ -100,7 +101,8 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         if incorrectPositions == "" {
             // Validation of entered code
             // If code is correct, go to Main
-            if Services.validate(code: strConcatValidationFields) {
+            let pinCodeCorrect = Services.validate(code: strConcatValidationFields)
+            if pinCodeCorrect {
                 performSegue(withIdentifier: "SegueToMainNavigation", sender: self)
             }
                 // Else: Entered code is not valid. Show a validation error message and clear fields
