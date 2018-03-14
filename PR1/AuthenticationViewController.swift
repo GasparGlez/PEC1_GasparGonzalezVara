@@ -120,6 +120,13 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Initial focus on firstField to start entering the 4 digit code
+    // viewDidLoad() is the first method to be called when view controller loads
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        firstField.becomeFirstResponder()
+    }
+    
     // END-UOC-4
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
