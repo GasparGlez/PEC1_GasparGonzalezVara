@@ -21,30 +21,31 @@ class CalculatorViewController: UIViewController {
     // END-UOC-7.1
     
     // BEGIN-UOC-7.2
+    // Function to update finalAmount with current values
+    func updatefinalAmount () {
+        let finalAmount = Services.calculateFinalAmount(ForAmount: initialAmountSlider.value, WithInterest: interestRateStepper.value/100, AndYears: yearsStepper.value)
+        finalAmountLabel.text = "Final amount: " + String(format: "%.2f", finalAmount) + "€"
+    }
+    
     @IBAction func initialAmountChanges(_ sender: Any) {
         // Update initialAmountLabel text
         initialAmountLabel.text = "Initial amount: " + String(format: "%.0f",initialAmountSlider.value) + " €"
-        // Calculate finalAmount with new values updated
-        let finalAmount = Services.calculateFinalAmount(ForAmount: initialAmountSlider.value, WithInterest: interestRateStepper.value/100, AndYears: yearsStepper.value)
-        finalAmountLabel.text = "Final amount: " + String(format: "%.2f", finalAmount) + "€"
+        // Update finalAmount with new value updated
+        updatefinalAmount ()
         
     }
     @IBAction func interestRateChanges(_ sender: Any) {
         // Update interestRateLabel text
         interestRateLabel.text = "Interest rate: " + String(format: "%.2f",interestRateStepper.value) + " %"
-        // Calculate finalAmount with new values updated
-        let finalAmount = Services.calculateFinalAmount(ForAmount: initialAmountSlider.value, WithInterest: interestRateStepper.value/100, AndYears: yearsStepper.value)
-        finalAmountLabel.text = "Final amount: " + String(format: "%.2f", finalAmount) + "€"
-        
+        // Update finalAmount with new value updated
+        updatefinalAmount ()
     }
     
     @IBAction func yearsChanges(_ sender: Any) {
         // Update yearsLabel text
         yearsLabel.text = "Years: " + String(format: "%.0f",yearsStepper.value)
-        // Calculate finalAmount with new values updated
-        let finalAmount = Services.calculateFinalAmount(ForAmount: initialAmountSlider.value, WithInterest: interestRateStepper.value/100, AndYears: yearsStepper.value)
-        finalAmountLabel.text = "Final amount: " + String(format: "%.2f", finalAmount) + "€"
-        
+        // Update finalAmount with new value updated
+        updatefinalAmount ()
     }
     // END-UOC-7.2
     
@@ -56,7 +57,8 @@ class CalculatorViewController: UIViewController {
         initialAmountLabel.text = "Initial amount: 100 €"
         interestRateLabel.text = "Interest rate: 1.00 %"
         yearsLabel.text = "Years: 1"
-        finalAmountLabel.text = "Final amount: 101.00 €"
+        // Update finalAmount with initial values
+        updatefinalAmount ()
     }
     // END-UOC-7.3
 }

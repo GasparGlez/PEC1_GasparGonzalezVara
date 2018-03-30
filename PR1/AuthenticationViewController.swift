@@ -20,7 +20,8 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     let alertMessageText = "Please input a number (0..9)"
     let alertMessageTitle = "Validation error"
     
-    // Array with for number positions
+    // Array with four number positions.
+    // Initialize array values to 10 as a null/invalid value
     var concatValidationFields: [Int] = [10,10,10,10]
     
     @IBAction func firstField(_ sender: UITextField) {
@@ -90,6 +91,7 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         
         // Check every position entered (array elements)
         for item in 0...3 {
+            // if concatValidationFields[item]>9 then this position contains an invalid value
             if (concatValidationFields[item]>9) {
                 incorrectPositions += " " + "\(item + 1)"
             }
