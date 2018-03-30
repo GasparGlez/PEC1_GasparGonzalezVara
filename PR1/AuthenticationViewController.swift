@@ -9,19 +9,18 @@ import UIKit
 
 class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     // BEGIN-UOC-4
-
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var firstField: UITextField!
     @IBOutlet weak var secondField: UITextField!
     @IBOutlet weak var thirdField: UITextField!
     @IBOutlet weak var fourthField: UITextField!
     
-    // Text & title for messages
+    // Text & title for error messages
     let alertMessageText = "Please input a number (0..9)"
     let alertMessageTitle = "Validation error"
     
     // Array with four number positions.
-    // Initialize array values to 10 as a null/invalid value
+    // Initialize array values to '10' as a null/invalid value
     var concatValidationFields: [Int] = [10,10,10,10]
     
     @IBAction func firstField(_ sender: UITextField) {
@@ -87,6 +86,7 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         // String with contatenation of incorrect/not numeric positions
         var incorrectPositions = ""
+        // String with contatenation of the four positions
         var strConcatValidationFields = ""
         
         // Check every position entered (array elements)
@@ -107,7 +107,7 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
             if pinCodeCorrect {
                 performSegue(withIdentifier: "SegueToMainNavigation", sender: self)
             }
-                // Else: Entered code is not valid. Show a validation error message and clear fields
+            // Else entered code is not valid. Show a validation error message and clear fields
             else{
                 Utils.show(Message: "Sorry, the entered code is not valid", WithTitle: alertMessageTitle,InViewController: self)
                 firstField.text = ""
@@ -128,7 +128,6 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         firstField.becomeFirstResponder()
     }
-    
     // END-UOC-4
     
     @IBAction func backButtonTapped(_ sender: UIButton) {

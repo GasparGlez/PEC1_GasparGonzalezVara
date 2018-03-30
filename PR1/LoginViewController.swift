@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         if loginAllowed {
             performSegue(withIdentifier: "SegueToAuthentication", sender: self)
         }
-        // Else clean fields and error message and don't go to next step
+        // Else clean fields and show error message
         else{
             // Focus on usernameField
             usernameField.becomeFirstResponder()
@@ -75,10 +75,7 @@ class LoginViewController: UIViewController {
             welcomeLabel.text = "Good night"
             self.view.backgroundColor = UIColor.blue.lighter()
         }
-        
     }
-    
-    
     // END-UOC-6
     
     @IBAction func unwindToLogin(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {

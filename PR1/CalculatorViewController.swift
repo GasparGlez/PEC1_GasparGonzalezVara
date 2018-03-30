@@ -24,7 +24,7 @@ class CalculatorViewController: UIViewController {
     // Function to update finalAmount with current values
     func updatefinalAmount () {
         let finalAmount = Services.calculateFinalAmount(ForAmount: initialAmountSlider.value, WithInterest: interestRateStepper.value/100, AndYears: yearsStepper.value)
-        finalAmountLabel.text = "Final amount: " + String(format: "%.2f", finalAmount) + "€"
+        finalAmountLabel.text = "Final amount: " + String(format: "%.2f", finalAmount) + " €"
     }
     
     @IBAction func initialAmountChanges(_ sender: Any) {
