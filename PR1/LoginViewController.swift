@@ -17,12 +17,19 @@ class LoginViewController: UIViewController {
         
         // Check credentials are the same as expected
         let loginAllowed = Services.validate(username: (usernameField.text)!, password: (passwordField.text)!)
-        // Credentials are OK -> Go to next step
+        
+        // If credentials are OK then go to next step
         if loginAllowed {
             performSegue(withIdentifier: "SegueToAuthentication", sender: self)
         }
-        // Error message and don't go to next step
+        // Else clean fields and error message and don't go to next step
         else{
+            // Focus on usernameField
+            usernameField.becomeFirstResponder()
+            // Set .text property to "" to initialize these UITextFields
+            usernameField.text=""
+            passwordField.text=""
+            // Error message
             Utils.show(Message: "Sorry, the username and password are invalid", WithTitle: "Validation error", InViewController: self)
         }
     }
@@ -37,6 +44,8 @@ class LoginViewController: UIViewController {
         // Set .text property to "" to initialize these UITextFields
         usernameField.text=""
         passwordField.text=""
+        // Initial focus on usernameField
+        usernameField.becomeFirstResponder()
     }
     // END-UOC-5
     
