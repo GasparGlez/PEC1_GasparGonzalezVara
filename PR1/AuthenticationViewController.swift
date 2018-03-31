@@ -23,11 +23,13 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
     // Initialize array values to '10' as a null/invalid value
     var concatValidationFields: [Int] = [10,10,10,10]
     
+    
     @IBAction func firstField(_ sender: UITextField) {
-        // If a number entered
-        if (Int(firstField.text!) != nil) {
+        let fieldValue = Int(firstField.text!) ?? 10
+        // If a number (0..9) entered
+        if (fieldValue<10) {
             // Set value for this position
-            concatValidationFields[0] = Int(firstField.text!)!
+            concatValidationFields[0] = fieldValue
             // Set focus to next UITextField
             secondField.becomeFirstResponder()
         }
@@ -39,10 +41,11 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func secondField(_ sender: UITextField) {
-        // If a number entered
-        if (Int(secondField.text!) != nil) {
+        let fieldValue = Int(secondField.text!) ?? 10
+        // If a number (0..9) entered
+        if (fieldValue<10) {
             // Set value for this position
-            concatValidationFields[1] = Int(secondField.text!)!
+            concatValidationFields[1] = fieldValue
             // Set focus to next UITextField
             thirdField.becomeFirstResponder()
         }
@@ -54,10 +57,11 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func thirdField(_ sender: UITextField) {
-        // If a number entered
-        if (Int(thirdField.text!) != nil) {
+        let fieldValue = Int(thirdField.text!) ?? 10
+        // If a number (0..9) entered
+        if (fieldValue<10) {
             // Set value for this position
-            concatValidationFields[2] = Int(thirdField.text!)!
+            concatValidationFields[2] = fieldValue
             // Set focus to next UITextField
             fourthField.becomeFirstResponder()
         }
@@ -69,10 +73,11 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func fourthField(_ sender: UITextField) {
-        // If a number entered
-        if (Int(fourthField.text!) != nil) {
+        let fieldValue = Int(fourthField.text!) ?? 10
+        // If a number (0..9) entered
+        if (fieldValue<10) {
             // Set value for this position
-            concatValidationFields[3] = Int(fourthField.text!)!
+            concatValidationFields[3] = fieldValue
             firstField.becomeFirstResponder()
         }
             // No number entered. Ask for a number to user
@@ -109,11 +114,12 @@ class AuthenticationViewController: UIViewController, UITextFieldDelegate {
             }
             // Else entered code is not valid. Show a validation error message and clear fields
             else{
-                Utils.show(Message: "Sorry, the entered code is not valid", WithTitle: alertMessageTitle,InViewController: self)
                 firstField.text = ""
                 secondField.text = ""
                 thirdField.text = ""
                 fourthField.text = ""
+                firstField.becomeFirstResponder()
+                Utils.show(Message: "Sorry, the entered code is not valid", WithTitle: alertMessageTitle,InViewController: self)
             }
         }
         // Else show incorrect positions to user

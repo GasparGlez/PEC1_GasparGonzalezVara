@@ -21,6 +21,9 @@ class CalculatorViewController: UIViewController {
     // END-UOC-7.1
     
     // BEGIN-UOC-7.2
+    // All input values can not be null, because they are prefixed and not nullable by the user, so, it is not necessary to use
+    // null validations with everyone (e.g. optionals)
+    
     // Function to update finalAmount with current values
     func updatefinalAmount () {
         let finalAmount = Services.calculateFinalAmount(ForAmount: initialAmountSlider.value, WithInterest: interestRateStepper.value/100, AndYears: yearsStepper.value)

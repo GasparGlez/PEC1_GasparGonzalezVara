@@ -15,23 +15,38 @@ class LoginViewController: UIViewController {
     // BEGIN-UOC-2
     @IBAction func loginTapped(_ sender: UIButton) {
         
-        // Check credentials are the same as expected
-        let loginAllowed = Services.validate(username: (usernameField.text)!, password: (passwordField.text)!)
+        // Using optionals to prevent always empty values
+        let username = usernameField.text ?? ""
+        let password = passwordField.text ?? ""
         
-        // If credentials are OK then go to next step
-        if loginAllowed {
-            performSegue(withIdentifier: "SegueToAuthentication", sender: self)
+        // Check if username is empty
+        if username == "" {
+            Utils.show(Message: "Sorry, Username is empty", WithTitle: "Validation error", InViewController: self)
         }
-        // Else clean fields and show error message
-        else{
-            // Focus on usernameField
-            usernameField.becomeFirstResponder()
-            // Set .text property to "" to initialize these UITextFields
-            usernameField.text=""
-            passwordField.text=""
-            // Error message
-            Utils.show(Message: "Sorry, the username and password are invalid", WithTitle: "Validation error", InViewController: self)
-        }
+        else
+            // Check if password is empty
+            if password == "" {
+            Utils.show(Message: "Sorry, Password is empty", WithTitle: "Validation error", InViewController: self)
+            }
+            else {
+                // Username & Passsword are not empty. Check credentials are the same as expected
+                let loginAllowed = Services.validate(username: username, password: password)
+        
+                // If credentials are OK then go to next step
+                if loginAllowed {
+                    performSegue(withIdentifier: "SegueToAuthentication", sender: self)
+                }
+                // Else clean fields and show error message
+                else{
+                    // Focus on usernameField
+                    usernameField.becomeFirstResponder()
+                    // Set .text property to "" to initialize these UITextFields
+                    usernameField.text=""
+                    passwordField.text=""
+                    // Error message
+                    Utils.show(Message: "Sorry, the username and password are invalid", WithTitle: "Validation error", InViewController: self)
+                    }
+                }
     }
     // END-UOC-2
     
