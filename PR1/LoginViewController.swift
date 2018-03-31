@@ -21,12 +21,16 @@ class LoginViewController: UIViewController {
         
         // Check if username is empty
         if username == "" {
+            // Focus on usernameField
+            usernameField.becomeFirstResponder()
             Utils.show(Message: "Sorry, Username is empty", WithTitle: "Validation error", InViewController: self)
         }
         else
             // Check if password is empty
             if password == "" {
-            Utils.show(Message: "Sorry, Password is empty", WithTitle: "Validation error", InViewController: self)
+                // Focus on passwordField
+                passwordField.becomeFirstResponder()
+                Utils.show(Message: "Sorry, Password is empty", WithTitle: "Validation error", InViewController: self)
             }
             else {
                 // Username & Passsword are not empty. Check credentials are the same as expected
